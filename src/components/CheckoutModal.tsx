@@ -209,3 +209,4 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ onClose }) => {
     </div>
   );
 };
+// Refined checkout modal UI
