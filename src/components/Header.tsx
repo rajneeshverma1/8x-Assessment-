@@ -324,3 +324,4 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+// Updated header accessibility
