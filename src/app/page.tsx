@@ -168,3 +168,4 @@ export default function Home() {
   );
 }
 // Page layout optimized
+// Footer text aligned
