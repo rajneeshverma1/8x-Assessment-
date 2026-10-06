@@ -13,7 +13,7 @@ export const CATEGORIES = [
 export const MOCK_PRODUCTS: Product[] = [
   {
     id: "prod-1",
-    title: "Sony WH-1000XM5 Wireless Industry Leading Noise Canceling Headphones",
+    title: "Sony WH-1000XM5 Wireless Noise Canceling Headphones",
     category: "Electronics",
     price: 348.00,
     originalPrice: 399.99,
@@ -25,22 +25,19 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "The WH-1000XM5 headphones rewrite the rules for distraction-free listening. 2 processors control 8 microphones for unprecedented noise canceling and exceptional call quality.",
+    description: "Industry-leading noise cancellation powered by two processors and eight microphones for pristine sound reproduction.",
     features: [
-      "Industry-leading auto NC optimizer noise canceling",
-      "Magnificent Sound, engineered to perfection with the new Integrated Processor V1",
-      "Crystal clear hands-free calling with 4 beamforming microphones",
-      "Up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback)",
-      "Ultra-comfortable, lightweight design with soft fit leather",
+      "Auto NC Optimizer noise canceling technology",
+      "Engineered sound with Integrated Processor V1",
+      "Up to 30 hours battery life with quick charge capability",
+      "Lightweight ergonomic design with soft leather cushions",
     ],
     specs: {
       "Brand": "Sony",
       "Color": "Black",
-      "Connectivity": "Wireless Bluetooth 5.2",
+      "Connectivity": "Bluetooth 5.2",
       "Form Factor": "Over-Ear",
-      "Noise Control": "Active Noise Cancellation",
     },
     variants: {
       colors: ["Black", "Silver", "Midnight Blue"],
@@ -51,7 +48,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-2",
-    title: "Apple MacBook Air 15-inch M3 Chip (16GB RAM, 512GB SSD Storage) - Space Grey",
+    title: "Apple MacBook Air 15-inch M3 (16GB RAM, 512GB SSD)",
     category: "Electronics",
     price: 1299.00,
     originalPrice: 1499.00,
@@ -64,22 +61,21 @@ export const MOCK_PRODUCTS: Product[] = [
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "The 15-inch MacBook Air is strikingly thin and has a stunning Liquid Retina display. Supercharged by the M3 chip with up to 18 hours of battery life.",
+    description: "Strikingly thin design with Liquid Retina display, supercharged by the Apple M3 processor.",
     features: [
-      "Lean. Mean. M3 machine: Powered by next-gen 8-core CPU and 10-core GPU",
-      "Up to 18 hours of battery life to go all day long",
-      "Immersive 15.3-inch Liquid Retina display with 500 nits of brightness",
-      "1080p FaceTime HD camera, three-mic array, and six-speaker sound system",
+      "Apple M3 chip with 8-core CPU and 10-core GPU",
+      "Up to 18 hours battery life",
+      "15.3-inch Liquid Retina display with 500 nits brightness",
+      "1080p FaceTime HD camera with spatial audio sound",
     ],
     specs: {
       "Brand": "Apple",
-      "Screen Size": "15.3 Inches",
-      "Hard Disk Size": "512 GB",
-      "CPU Model": "Apple M3",
-      "Ram Memory": "16 GB",
+      "Display": "15.3 Inches",
+      "Storage": "512 GB SSD",
+      "Memory": "16 GB Unified",
     },
     variants: {
-      colors: ["Space Grey", "Silver", "Starlight", "Midnight"],
+      colors: ["Space Grey", "Silver", "Midnight"],
     },
     inStock: true,
     stockCount: 18,
@@ -87,7 +83,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-3",
-    title: "Nike Men's Revolution 6 Next Nature Running Shoes",
+    title: "Nike Men's Revolution 6 Running Shoes",
     category: "Fashion",
     price: 54.95,
     originalPrice: 70.00,
@@ -100,21 +96,19 @@ export const MOCK_PRODUCTS: Product[] = [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "Set the pace at the start of your running journey with the plush feel of the Nike Revolution 6 Next Nature. We know comfort is key to a successful run.",
+    description: "Plush, breathable running shoe designed with recycled materials and comfortable foam cushioning.",
     features: [
-      "Made with at least 20% recycled content by weight",
-      "Plush mesh along the collar for a comfortable feel",
-      "Foam midsole delivers a softer ride than the Revolution 5",
-      "Outsole has a computer-generated design creating a natural piston effect",
+      "Soft mesh collar for comfortable fit",
+      "Foam midsole provides enhanced energy return",
+      "Durable rubber outsole with high traction pattern",
     ],
     specs: {
       "Brand": "Nike",
-      "Sole Material": "Rubber",
-      "Outer Material": "Synthetic Mesh",
-      "Closure Type": "Lace-Up",
+      "Outer Material": "Breathable Mesh",
+      "Sole": "Rubber",
     },
     variants: {
-      colors: ["Red/White", "Black/White", "All Black"],
+      colors: ["Red/White", "Black/White"],
       sizes: ["8", "9", "10", "11", "12"],
     },
     inStock: true,
@@ -123,7 +117,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-4",
-    title: "Nespresso VertuoPlus Deluxe Coffee and Espresso Machine by De'Longhi",
+    title: "Nespresso VertuoPlus Deluxe Espresso Machine",
     category: "Home & Kitchen",
     price: 159.00,
     originalPrice: 199.00,
@@ -134,23 +128,20 @@ export const MOCK_PRODUCTS: Product[] = [
     badge: "Best Seller",
     images: [
       "https://images.unsplash.com/photo-1517668808822-9ede02f2a029?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "Nespresso VertuoPlus offers single-serve coffee or authentic espresso at the touch of a button using Centrifusion technology.",
+    description: "Single-serve coffee maker creating rich crema coffee and espresso at the touch of a button.",
     features: [
-      "Versatile automatic coffee maker for 5 cup sizes",
-      "Centrifusion technology reads barcode on capsules for optimal brewing",
-      "Extra large 60 oz movable water tank",
-      "Includes complimentary starter set of Nespresso Vertuo capsules",
+      "Centrifusion technology for optimal extraction",
+      "Large 60 oz removable water reservoir",
+      "Includes complimentary coffee capsule starter set",
     ],
     specs: {
       "Brand": "Nespresso",
-      "Capacity": "60 Fluid Ounces",
-      "Color": "Titanium",
-      "Special Feature": "Programmable, Removable Tank",
+      "Capacity": "60 oz",
+      "Finish": "Titanium",
     },
     variants: {
-      colors: ["Titanium", "Black", "Matte Black"],
+      colors: ["Titanium", "Black"],
     },
     inStock: true,
     stockCount: 30,
@@ -158,7 +149,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-5",
-    title: "PlayStation 5 Console (Slim Slim Edition) DualSense Controller",
+    title: "PlayStation 5 Console Slim Edition",
     category: "Gaming",
     price: 449.99,
     originalPrice: 499.99,
@@ -169,20 +160,17 @@ export const MOCK_PRODUCTS: Product[] = [
     badge: "Limited Time Deal",
     images: [
       "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with haptic feedback, adaptive triggers, and 3D Audio.",
+    description: "Next-gen gaming power with custom ultra-fast SSD and 4K 120Hz graphics support.",
     features: [
-      "Slim Design: Packed with powerful gaming tech inside a sleek compact design",
-      "1TB SSD Storage: Keep your favorite games ready and waiting to play",
-      "Ray Tracing & 4K-TV Gaming up to 120fps with 120Hz output",
-      "DualSense Wireless Controller included with haptic feedback",
+      "1TB internal high-speed SSD storage",
+      "DualSense controller with haptic feedback & adaptive triggers",
+      "Tempest 3D AudioTech integration",
     ],
     specs: {
       "Brand": "Sony",
       "Storage": "1TB Custom SSD",
-      "Resolution": "Up to 8K / 4K 120Hz",
-      "Audio": "Tempest 3D AudioTech",
+      "Resolution": "Up to 4K 120Hz",
     },
     inStock: true,
     stockCount: 12,
@@ -190,7 +178,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-6",
-    title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    title: "Atomic Habits by James Clear (Hardcover)",
     category: "Books",
     price: 13.79,
     originalPrice: 27.00,
@@ -201,21 +189,16 @@ export const MOCK_PRODUCTS: Product[] = [
     badge: "Best Seller",
     images: [
       "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "No matter your goals, Atomic Habits offers a proven framework for improving every day. James Clear reveals practical strategies to form good habits.",
+    description: "An easy and proven way to build good habits and break bad ones.",
     features: [
-      "Over 15 Million copies sold worldwide",
-      "Learn how to make time for new habits and overcome lack of motivation",
-      "Design your environment to make success easier",
-      "Get back on track when you fall off course",
+      "International bestseller with over 15 million copies sold",
+      "Practical strategies for daily self-improvement",
     ],
     specs: {
       "Author": "James Clear",
-      "Publisher": "Avery",
       "Format": "Hardcover",
       "Pages": "320",
-      "Language": "English",
     },
     inStock: true,
     stockCount: 250,
@@ -223,7 +206,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-7",
-    title: "CeraVe Hydrating Facial Cleanser | Non-Foaming Face Wash with Hyaluronic Acid",
+    title: "CeraVe Hydrating Facial Cleanser 16oz",
     category: "Beauty & Personal Care",
     price: 15.49,
     originalPrice: 17.99,
@@ -234,20 +217,16 @@ export const MOCK_PRODUCTS: Product[] = [
     badge: "Amazon's Choice",
     images: [
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1608248597309-f0055e71d488?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "Developed with dermatologists, CeraVe Hydrating Facial Cleanser cleanses and refreshes skin without over-stripping it or leaving it feeling tight.",
+    description: "Gentle non-foaming face wash formulated with 3 essential ceramides and hyaluronic acid.",
     features: [
-      "Gentle face wash formulated with Hyaluronic Acid & 3 essential ceramides",
-      "MVD Technology continuously releases moisturizing ingredients for 24h hydration",
-      "Fragrance-free, non-comedogenic, non-drying, non-irritating",
-      "Accepted by the National Eczema Association",
+      "24-hour hydration with MVE Technology",
+      "Fragrance-free and non-comedogenic formula",
     ],
     specs: {
       "Brand": "CeraVe",
-      "Item Weight": "16 Fluid Ounces",
-      "Skin Type": "Normal to Dry Skin",
-      "Scent": "Unscented",
+      "Volume": "16 fl oz",
+      "Skin Type": "Normal to Dry",
     },
     inStock: true,
     stockCount: 150,
@@ -255,7 +234,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "prod-8",
-    title: "Anker Magnetic Wireless Power Bank 10,000mAh Battery Pack",
+    title: "Anker Magnetic Wireless Power Bank 10000mAh",
     category: "Electronics",
     price: 42.99,
     originalPrice: 59.99,
@@ -266,23 +245,27 @@ export const MOCK_PRODUCTS: Product[] = [
     badge: "Limited Time Deal",
     images: [
       "https://images.unsplash.com/photo-1609592424074-1ff2f7400d33?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80",
     ],
-    description: "Snaps magnetically into place to ensure perfect alignment and an efficient wireless charge for iPhone 15/14/13/12 series.",
+    description: "MagSafe compatible magnetic power bank with built-in kickstand.",
     features: [
-      "Strong magnetic lock snap-and-charge tech",
-      "Charge 2 devices at once via wireless and USB-C cable",
-      "Pass-through charging allows you to charge your phone while recharging power bank",
-      "Foldable kickstand built-in for viewing phone hands-free while charging",
+      "Strong magnetic snap-on wireless charging",
+      "10000mAh capacity with USB-C fast charging port",
     ],
     specs: {
       "Brand": "Anker",
-      "Battery Capacity": "10000 Milliamp Hours",
-      "Color": "Black",
-      "Special Feature": "MagSafe Compatible, Kickstand",
+      "Capacity": "10000 mAh",
     },
     inStock: true,
     stockCount: 85,
     estimatedDelivery: "Tomorrow, Sep 16",
   }
 ];
+
+export const getProductById = (id: string): Product | undefined => {
+  return MOCK_PRODUCTS.find((p) => p.id === id);
+};
+
+export const getProductsByCategory = (category: string): Product[] => {
+  if (category === "All Categories") return MOCK_PRODUCTS;
+  return MOCK_PRODUCTS.filter((p) => p.category === category);
+};
