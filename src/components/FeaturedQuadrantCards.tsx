@@ -108,3 +108,4 @@ export const FeaturedQuadrantCards: React.FC = () => {
     </div>
   );
 };
+// Enhanced quadrant cards transition
