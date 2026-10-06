@@ -1,3 +1,5 @@
+export type ProductBadge = "Deal of the Day" | "Best Seller" | "Amazon's Choice" | "Limited Time Deal";
+
 export interface Product {
   id: string;
   title: string;
@@ -8,7 +10,7 @@ export interface Product {
   rating: number;
   reviewCount: number;
   isPrime: boolean;
-  badge?: "Deal of the Day" | "Best Seller" | "Amazon's Choice" | "Limited Time Deal";
+  badge?: ProductBadge;
   images: string[];
   description: string;
   features: string[];
@@ -29,6 +31,8 @@ export interface CartItem {
   selectedSize?: string;
 }
 
+export type OrderStatus = "Processing" | "Shipped" | "Out for Delivery" | "Delivered";
+
 export interface Order {
   id: string;
   date: string;
@@ -36,7 +40,7 @@ export interface Order {
   totalAmount: number;
   shippingAddress: string;
   paymentMethod: string;
-  status: "Processing" | "Shipped" | "Out for Delivery" | "Delivered";
+  status: OrderStatus;
   estimatedDeliveryDate: string;
   trackingNumber: string;
 }
