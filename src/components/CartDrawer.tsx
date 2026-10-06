@@ -216,3 +216,4 @@ export const CartDrawer: React.FC = () => {
     </>
   );
 };
+// Refined free shipping meter
