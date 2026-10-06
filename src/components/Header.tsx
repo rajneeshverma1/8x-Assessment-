@@ -3,25 +3,15 @@
 import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { CATEGORIES } from "@/data/mockProducts";
-import { 
-  Search, 
-  ShoppingCart, 
-  MapPin, 
-  Heart, 
-  User, 
-  ChevronDown, 
-  Globe, 
-  PackageCheck,
-  Sparkles
-} from "lucide-react";
+import { Search, ShoppingCart, MapPin, Heart, ChevronDown, Globe } from "lucide-react";
 
 export const Header: React.FC = () => {
   const { cart, wishlist, setIsCartOpen, filterState, setFilterState } = useCart();
   const [selectedCategory, setSelectedCategory] = useState(filterState.category || "All Categories");
   const [searchInput, setSearchInput] = useState(filterState.searchQuery || "");
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [showAccountDropdown, setShowAccountDropdown] = useState(false);
 
-  const totalCartCount = cart.reduce((count, item) => count + item.quantity, 0);
+  const totalCartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,54 +22,50 @@ export const Header: React.FC = () => {
     }));
   };
 
+  const handleLogoClick = () => {
+    setFilterState({
+      category: "All Categories",
+      searchQuery: "",
+      minPrice: 0,
+      maxPrice: 2000,
+      minRating: 0,
+      isPrimeOnly: false,
+      isDealOnly: false,
+    });
+    setSearchInput("");
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-[#131921] text-white shadow-md">
-      {/* Top Main Navigation Bar */}
       <div className="flex items-center justify-between gap-2 px-3 py-2 md:gap-4 md:px-4">
         
         {/* Amazon Logo */}
-        <div className="flex items-center gap-1">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              setFilterState({
-                category: "All Categories",
-                searchQuery: "",
-                minPrice: 0,
-                maxPrice: 2000,
-                minRating: 0,
-                isPrimeOnly: false,
-                isDealOnly: false,
-              });
-              setSearchInput("");
-            }}
-            className="flex items-center gap-1 rounded border border-transparent p-1.5 transition hover:border-white focus:outline-none"
-          >
-            <div className="flex items-baseline font-bold text-2xl tracking-tighter text-white">
-              amazon<span className="text-[#febd69] font-medium text-lg">.clone</span>
-            </div>
-          </a>
-        </div>
+        <button
+          onClick={handleLogoClick}
+          className="flex items-center gap-1 rounded border border-transparent p-1.5 transition hover:border-white focus:outline-none"
+        >
+          <span className="font-bold text-2xl tracking-tighter text-white">
+            amazon<span className="text-[#febd69] font-medium text-lg">.clone</span>
+          </span>
+        </button>
 
         {/* Deliver To Selector */}
         <button
-          onClick={() => alert("Delivery Location: New York 10001, United States")}
+          onClick={() => alert("Deliver to: New York 10001")}
           className="hidden lg:flex items-center gap-1 rounded border border-transparent p-1.5 text-left transition hover:border-white focus:outline-none"
         >
-          <MapPin className="h-5 w-5 text-gray-300 self-center" />
+          <MapPin className="h-5 w-5 text-gray-300" />
           <div className="flex flex-col text-xs leading-tight">
-            <span className="text-gray-400 font-normal">Deliver to</span>
+            <span className="text-gray-400">Deliver to</span>
             <span className="font-bold text-white text-sm">New York 10001</span>
           </div>
         </button>
 
-        {/* Interactive Search Bar */}
+        {/* Search Bar Form */}
         <form
           onSubmit={handleSearchSubmit}
           className="flex flex-1 items-center max-w-3xl rounded-md bg-white focus-within:ring-2 focus-within:ring-[#ff9900]"
         >
-          {/* Category Dropdown */}
           <div className="relative hidden sm:block">
             <select
               value={selectedCategory}
@@ -95,16 +81,14 @@ export const Header: React.FC = () => {
             <ChevronDown className="pointer-events-none absolute right-2 top-3 h-4 w-4 text-gray-500" />
           </div>
 
-          {/* Search Input */}
           <input
             type="text"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Search Amazon Clone deals, electronics, fashion..."
-            className="h-10 flex-1 px-3 text-sm text-gray-900 focus:outline-none placeholder-gray-500"
+            placeholder="Search Amazon Clone..."
+            className="h-10 flex-1 px-3 text-sm text-gray-900 focus:outline-none"
           />
 
-          {/* Clear button if typed */}
           {searchInput && (
             <button
               type="button"
@@ -118,88 +102,53 @@ export const Header: React.FC = () => {
             </button>
           )}
 
-          {/* Search Action Button */}
           <button
             type="submit"
             className="flex h-10 w-11 items-center justify-center rounded-r-md bg-[#febd69] text-gray-900 transition hover:bg-[#f3a847] focus:outline-none"
-            aria-label="Submit Search"
+            aria-label="Search"
           >
             <Search className="h-5 w-5" />
           </button>
         </form>
 
-        {/* Language / Region */}
+        {/* Region */}
         <div className="hidden xl:flex items-center gap-1 rounded border border-transparent p-1.5 transition hover:border-white cursor-pointer">
           <Globe className="h-4 w-4 text-gray-300" />
           <span className="text-xs font-bold">EN</span>
-          <ChevronDown className="h-3 w-3 text-gray-400" />
         </div>
 
-        {/* Account & Lists */}
+        {/* Account Menu */}
         <div className="relative">
           <button
-            onClick={() => setIsAccountOpen(!isAccountOpen)}
+            onClick={() => setShowAccountDropdown(!showAccountDropdown)}
             className="flex flex-col rounded border border-transparent p-1.5 text-left transition hover:border-white focus:outline-none"
           >
-            <span className="text-[11px] text-gray-300 font-normal">Hello, Sign in</span>
+            <span className="text-[11px] text-gray-300">Hello, Sign in</span>
             <div className="flex items-center gap-0.5 font-bold text-xs">
               <span>Account & Lists</span>
               <ChevronDown className="h-3 w-3 text-gray-400" />
             </div>
           </button>
 
-          {isAccountOpen && (
-            <div className="absolute right-0 top-12 z-50 w-64 rounded-md bg-white p-4 text-gray-800 shadow-xl border border-gray-200">
-              <div className="text-center mb-3">
-                <button
-                  onClick={() => {
-                    alert("Signed in as Demo User!");
-                    setIsAccountOpen(false);
-                  }}
-                  className="w-full rounded-md bg-amber-400 py-1.5 text-xs font-bold text-gray-900 shadow hover:bg-amber-500"
-                >
-                  Sign in
-                </button>
-                <p className="mt-2 text-[11px] text-gray-500">
-                  New customer? <span className="text-blue-600 underline cursor-pointer">Start here.</span>
-                </p>
-              </div>
-              <hr className="my-2" />
-              <div className="space-y-2 text-xs">
-                <div className="font-bold text-gray-900">Your Account</div>
-                <a href="#" className="block hover:text-amber-600">Your Orders</a>
-                <a href="#" className="block hover:text-amber-600">Your Recommendations</a>
-                <a href="#" className="block hover:text-amber-600">Prime Membership</a>
-              </div>
+          {showAccountDropdown && (
+            <div className="absolute right-0 top-12 z-50 w-56 rounded-md bg-white p-4 text-gray-800 shadow-xl border border-gray-200">
+              <button
+                onClick={() => {
+                  alert("Signed in as Demo User");
+                  setShowAccountDropdown(false);
+                }}
+                className="w-full rounded-md bg-amber-400 py-1.5 text-xs font-bold text-gray-900 shadow hover:bg-amber-500"
+              >
+                Sign in
+              </button>
             </div>
           )}
         </div>
 
-        {/* Returns & Orders */}
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            alert("Viewing Demo Orders History");
-          }}
-          className="hidden sm:flex flex-col rounded border border-transparent p-1.5 text-left transition hover:border-white"
-        >
-          <span className="text-[11px] text-gray-300 font-normal">Returns</span>
-          <span className="font-bold text-xs">& Orders</span>
-        </a>
-
-        {/* Wishlist Link */}
+        {/* Wishlist */}
         <button
-          onClick={() => {
-            setFilterState((prev) => ({
-              ...prev,
-              category: "All Categories",
-              searchQuery: "",
-            }));
-            alert(`Wishlist contains ${wishlist.length} item(s)`);
-          }}
+          onClick={() => alert(`Saved items: ${wishlist.length}`)}
           className="hidden sm:flex items-center gap-1 rounded border border-transparent p-1.5 transition hover:border-white relative"
-          title="Wishlist"
         >
           <Heart className={`h-6 w-6 ${wishlist.length > 0 ? "fill-red-500 text-red-500" : "text-white"}`} />
           {wishlist.length > 0 && (
@@ -209,7 +158,7 @@ export const Header: React.FC = () => {
           )}
         </button>
 
-        {/* Shopping Cart Drawer Trigger */}
+        {/* Cart Drawer Trigger */}
         <button
           onClick={() => setIsCartOpen(true)}
           className="flex items-center gap-1 rounded border border-transparent p-1.5 transition hover:border-white focus:outline-none relative"
