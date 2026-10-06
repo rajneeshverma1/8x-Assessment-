@@ -150,6 +150,7 @@ export default function Home() {
             <span className="hover:underline cursor-pointer">Consumer Health Data</span>
             <span className="hover:underline cursor-pointer">Your Ads Privacy Choices</span>
           </div>
+          <p className="font-semibold text-gray-300">8x Home Assignment | Built by Rajneesh</p>
           <p>© 2026 Amazon E-Commerce Clone | Next.js 16 & React 19 Enterprise Architecture</p>
         </div>
       </footer>
