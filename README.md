@@ -22,35 +22,35 @@ This repository contains a full-stack assessment implementation of the Amazon E-
 
 | Module | Feature Capabilities | Status |
 | :--- | :--- | :---: |
-| **Amazon Header** | Logo, Deliver to Location selector, Category Search select, Search clear, Account dropdown, Orders link, Cart counter badge | Active |
-| **Category Nav** | All hamburger drawer menu, Today's Deals filter shortcut, Quick category tabs, Prime perks | Active |
-| **Hero Carousel** | Auto-sliding promotional banners, manual prev/next navigation, smooth gradient backdrop, call-to-action buttons | Active |
-| **Product Grid** | Responsive card grid, hover zoom preview, Prime check badges, sale tags, Star rating breakdown, Wishlist heart toggle | Active |
-| **Filter Sidebar** | Department filter, Price Range slider ($0-$2000), Customer Rating threshold (1-4 Stars & up), Prime-only, Deals-only | Active |
-| **Product Modal** | High-res gallery thumbnail switcher, Color & Size variant selectors, Specs breakdown table, Item features bullet points | Active |
-| **Cart Drawer** | Slide-over sidebar, quantity updater, subtotal calculation, Free Shipping Progress Bar, Cart clear | Active |
-| **Checkout Flow** | Multi-step shipping address & payment selection, Order summary, Confetti celebration effect, Tracking number generator | Active |
+| Amazon Header | Logo, Deliver to Location selector, Category Search select, Search clear, Account dropdown, Orders link, Cart counter badge | Active |
+| Category Nav | All hamburger drawer menu, Today's Deals filter shortcut, Quick category tabs, Prime perks | Active |
+| Hero Carousel | Auto-sliding promotional banners, manual prev/next navigation, smooth gradient backdrop, call-to-action buttons | Active |
+| Product Grid | Responsive card grid, hover zoom preview, Prime check badges, sale tags, Star rating breakdown, Wishlist heart toggle | Active |
+| Filter Sidebar | Department filter, Price Range slider ($0-$2000), Customer Rating threshold (1-4 Stars & up), Prime-only, Deals-only | Active |
+| Product Modal | High-res gallery thumbnail switcher, Color & Size variant selectors, Specs breakdown table, Item features bullet points | Active |
+| Cart Drawer | Slide-over sidebar, quantity updater, subtotal calculation, Free Shipping Progress Bar, Cart clear | Active |
+| Checkout Flow | Multi-step shipping address & payment selection, Order summary, Confetti celebration effect, Tracking number generator | Active |
 
 ---
 
 ## UI Showcase & User Experience Flow
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        AMAZON HEADER & SEARCH                          │
-├────────────────────────────────────────────────────────────────────────┤
-│ [All Dropdown] | Search products...                | [Search Button]   │
-├────────────────────────────────────────────────────────────────────────┤
-│ CATEGORY SUB-HEADER: All | Today's Deals | Electronics | Fashion | Home│
-├────────────────────────────────────────────────────────────────────────┤
-│ HERO CAROUSEL: Mega Electronics Festival / Up to 40% OFF               │
-├───────────────────────────────┬────────────────────────────────────────┤
-│ FILTER SIDEBAR                │ PRODUCT GRID                           │
-│ • Departments                 │ ┌────────────┐ ┌────────────┐          │
-│ • Price Range ($0 - $2000)    │ │ Product 1  │ │ Product 2  │          │
-│ • Rating (4 Stars & Up)       │ │ $348.00    │ │ $1,299.00  │          │
-│ • Prime Eligible              │ └────────────┘ └────────────┘          │
-└───────────────────────────────┴────────────────────────────────────────┘
++------------------------------------------------------------------------+
+|                        AMAZON HEADER & SEARCH                          |
++------------------------------------------------------------------------+
+| [All Dropdown] | Search products...                | [Search Button]   |
++------------------------------------------------------------------------+
+| CATEGORY SUB-HEADER: All | Today's Deals | Electronics | Fashion | Home|
++------------------------------------------------------------------------+
+| HERO CAROUSEL: Mega Electronics Festival / Up to 40% OFF               |
++-------------------------------+----------------------------------------+
+| FILTER SIDEBAR                | PRODUCT GRID                           |
+| - Departments                 | +------------+ +------------+          |
+| - Price Range ($0 - $2000)    | | Product 1  | | Product 2  |          |
+| - Rating (4 Stars & Up)       | | $348.00    | | $1,299.00  |          |
+| - Prime Eligible              | +------------+ +------------+          |
++-------------------------------+----------------------------------------+
 ```
 
 ---
