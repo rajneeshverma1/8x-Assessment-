@@ -6,7 +6,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-An enterprise-grade, ultra-responsive Amazon E-Commerce clone engineered with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and **Framer Motion**. Designed for maximum performance, rich visual aesthetics, and flawless user interaction.
+An enterprise-grade, ultra-responsive Amazon E-Commerce clone engineered with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and **Framer Motion**.
+
+🌐 **Live Deployed App**: [**https://amazon-cyan-zeta-78.vercel.app**](https://amazon-cyan-zeta-78.vercel.app)
 
 ---
 
@@ -37,28 +39,6 @@ This repository contains a full-stack assessment implementation of the **Amazon 
 
 ---
 
-## 🖥️ UI Showcase & User Experience Flow
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        AMAZON HEADER & SEARCH                          │
-├────────────────────────────────────────────────────────────────────────┤
-│ [All Dropdown] | Search products...                | [Search Button]   │
-├────────────────────────────────────────────────────────────────────────┤
-│ CATEGORY SUB-HEADER: All | Today's Deals | Electronics | Fashion | Home│
-├────────────────────────────────────────────────────────────────────────┤
-│ HERO CAROUSEL: Mega Electronics Festival / Up to 40% OFF               │
-├───────────────────────────────┬────────────────────────────────────────┤
-│ FILTER SIDEBAR                │ PRODUCT GRID                           │
-│ • Departments                 │ ┌────────────┐ ┌────────────┐          │
-│ • Price Range ($0 - $2000)    │ │ Product 1  │ │ Product 2  │          │
-│ • Rating (4★ & Up)            │ │ $348.00    │ │ $1,299.00  │          │
-│ • Prime Eligible              │ └────────────┘ └────────────┘          │
-└───────────────────────────────┴────────────────────────────────────────┘
-```
-
----
-
 ## 🏗️ Architecture & Project Structure
 
 ```
@@ -86,7 +66,7 @@ amazon/
 │   │   └── mockProducts.ts       # Comprehensive product catalog data
 │   └── types/
 │       └── index.ts              # Core TypeScript interfaces
-├── public/                       # Static public assets
+├── .agent-logs/                  # Submission system agent logs directory
 ├── package.json                  # Dependencies & scripts configuration
 └── tsconfig.json                 # TypeScript strict mode settings
 ```
@@ -94,10 +74,6 @@ amazon/
 ---
 
 ## 🚀 Getting Started & Installation
-
-### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm**: v9.0.0 or higher
 
 ### Step-by-Step Installation
 
@@ -116,55 +92,13 @@ amazon/
    ```bash
    npm run dev
    ```
-   Open your browser and navigate to [http://localhost:3000](http://localhost:3000) or [http://localhost:3005](http://localhost:3005).
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
-5. **Start production build locally:**
-   ```bash
-   npm run start
-   ```
 
 ---
 
-## 📜 Available Scripts Reference
+## 🌐 Live Production Deployment
 
-| Command | Action |
-| :--- | :--- |
-| `npm run dev` | Starts Next.js development server with Turbopack fast refresh |
-| `npm run build` | Compiles optimized Next.js production build and checks TypeScript types |
-| `npm run start` | Runs production server for built application |
-| `npm run lint` | Runs ESLint check across all codebase files |
-
----
-
-## 🌐 Production Deployment Guide
-
-### Deploying to Vercel
-1. Import repository `https://github.com/rajneeshverma1/8x-Assessment-.git` into [Vercel](https://vercel.com).
-2. Framework Preset: **Next.js**.
-3. Click **Deploy**. Vercel will automatically build and publish the live production URL.
-
-### Deploying to Netlify
-1. Connect GitHub account on [Netlify](https://netlify.com).
-2. Build command: `npm run build`
-3. Publish directory: `.next`
-
----
-
-## 📋 8x Assessment Checklist Compliance
-
-- [x] Full responsive Amazon visual aesthetic & branding
-- [x] Product search bar with live filtering & category select
-- [x] Multi-attribute filter sidebar (Price, Rating, Prime, Deals)
-- [x] Product quick-view modal with variant selection & specs
-- [x] Slide-over cart drawer with free shipping calculator
-- [x] Multi-step checkout modal with confetti particle animation
-- [x] Client-side state persistence via `localStorage`
-- [x] Zero TypeScript / Lint warnings on production build
+- **Live URL**: [https://amazon-cyan-zeta-78.vercel.app](https://amazon-cyan-zeta-78.vercel.app)
+- **GitHub Repository**: [https://github.com/rajneeshverma1/8x-Assessment-.git](https://github.com/rajneeshverma1/8x-Assessment-.git)
 
 ---
 
