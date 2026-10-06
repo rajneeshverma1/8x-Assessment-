@@ -148,3 +148,6 @@ Licensed under the MIT License.
 
 ## Contribution Matrix & Features Summary
 Engineered with 30 production commits covering all Amazon user flows.
+
+### Author Attribution
+8x Home Assessment Built by Rajneesh.
