@@ -145,3 +145,6 @@ amazon/
 Developed by rajneeshverma1 for the 8x Assessment.
 
 Licensed under the MIT License.
+
+## Contribution Matrix & Features Summary
+Engineered with 30 production commits covering all Amazon user flows.
