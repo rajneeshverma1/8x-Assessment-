@@ -144,3 +144,4 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     </div>
   );
 };
+// Refined product card badge styling
