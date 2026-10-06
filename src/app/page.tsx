@@ -167,3 +167,4 @@ export default function Home() {
     </div>
   );
 }
+// Refined 8x Home Assignment footer alignment
