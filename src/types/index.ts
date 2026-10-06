@@ -77,3 +77,4 @@ export interface User {
   city: string;
   state: string;
 }
+// Refined user interface metadata
