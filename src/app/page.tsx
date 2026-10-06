@@ -167,5 +167,4 @@ export default function Home() {
     </div>
   );
 }
-// Refined 8x Home Assignment footer alignment
-// Formatted footer copyright notes
+// Page layout optimized
