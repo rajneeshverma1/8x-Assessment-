@@ -55,7 +55,7 @@ This repository contains a full-stack assessment implementation of the Amazon E-
 
 ---
 
-## Architecture & Project Structure
+## Architecture and Project Structure
 
 ```
 amazon/
