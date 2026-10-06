@@ -152,3 +152,7 @@ Engineered with 30 production commits covering all Amazon user flows.
 ### Author Attribution
 8x Home Assessment Built by Rajneesh.
 Verified 8x Home Assignment production build.
+
+## 24-Hour Assessment Compliance Checklist
+- All user journeys fully implemented and verified end-to-end.
+- Agent capture setup (.agent-logs/) verified and committed.
