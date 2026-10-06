@@ -56,3 +56,53 @@ This repository contains a full-stack assessment implementation of the **Amazon 
 │ • Prime Eligible              │ └────────────┘ └────────────┘          │
 └───────────────────────────────┴────────────────────────────────────────┘
 ```
+
+---
+
+## 🏗️ Architecture & Project Structure
+
+```
+amazon/
+├── src/
+│   ├── app/
+│   │   ├── globals.css           # Global Tailwind CSS v4 & custom animations
+│   │   ├── layout.tsx            # Root layout wrapped with CartProvider context
+│   │   └── page.tsx              # Main home page integrating all modules
+│   ├── components/
+│   │   ├── CartDrawer.tsx        # Slide-over sidebar cart & free shipping meter
+│   │   ├── CategoryNav.tsx       # Sub-header category navigation & drawer menu
+│   │   ├── CheckoutModal.tsx     # Multi-step checkout & confetti celebration
+│   │   ├── FilterSidebar.tsx     # Price, rating, prime, & deals filter sidebar
+│   │   ├── Header.tsx            # Amazon search bar, header, location selector
+│   │   ├── HeroCarousel.tsx      # Promotional deal banner slider
+│   │   ├── ProductCard.tsx       # Product card with badges, rating, & price
+│   │   ├── ProductDetailModal.tsx# Quick view modal with gallery & variants
+│   │   ├── ProductGrid.tsx       # Grid container for product cards
+│   │   ├── SortBar.tsx           # Results counter & sort dropdown
+│   │   └── Toast.tsx             # Floating notification toasts
+│   ├── context/
+│   │   └── CartContext.tsx       # React Context provider & state manager
+│   ├── data/
+│   │   └── mockProducts.ts       # Comprehensive product catalog data
+│   └── types/
+│       └── index.ts              # Core TypeScript interfaces
+├── public/                       # Static public assets
+├── package.json                  # Dependencies & scripts configuration
+└── tsconfig.json                 # TypeScript strict mode settings
+```
+
+### 🧠 Data Flow & State Management
+
+```mermaid
+graph TD
+    A[CartProvider Context] --> B[Cart State]
+    A --> C[Wishlist State]
+    A --> D[Filter & Search State]
+    A --> E[Toast Notifications]
+    
+    B -->|Persists| LocalStorage[Browser LocalStorage]
+    C -->|Persists| LocalStorage
+    
+    D -->|Filters| MockProducts[MOCK_PRODUCTS Catalog]
+    MockProducts -->|Renders| ProductGrid[Product Grid Component]
+```
