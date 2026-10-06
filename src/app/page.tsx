@@ -1,69 +1,149 @@
-import Image from "next/image";
+"use client";
+
+import React, { useMemo } from "react";
+import { useCart } from "@/context/CartContext";
+import { MOCK_PRODUCTS } from "@/data/mockProducts";
+import { Header } from "@/components/Header";
+import { CategoryNav } from "@/components/CategoryNav";
+import { HeroCarousel } from "@/components/HeroCarousel";
+import { FilterSidebar } from "@/components/FilterSidebar";
+import { SortBar } from "@/components/SortBar";
+import { ProductGrid } from "@/components/ProductGrid";
+import { ProductDetailModal } from "@/components/ProductDetailModal";
+import { CartDrawer } from "@/components/CartDrawer";
+import { ToastContainer } from "@/components/Toast";
 
 export default function Home() {
+  const { filterState, sortOption } = useCart();
+
+  const filteredProducts = useMemo(() => {
+    return MOCK_PRODUCTS.filter((product) => {
+      // Category filter
+      if (
+        filterState.category !== "All Categories" &&
+        product.category !== filterState.category
+      ) {
+        return false;
+      }
+
+      // Search query filter
+      if (filterState.searchQuery) {
+        const query = filterState.searchQuery.toLowerCase();
+        const titleMatch = product.title.toLowerCase().includes(query);
+        const descMatch = product.description.toLowerCase().includes(query);
+        const catMatch = product.category.toLowerCase().includes(query);
+        if (!titleMatch && !descMatch && !catMatch) return false;
+      }
+
+      // Price filter
+      if (product.price > filterState.maxPrice) return false;
+
+      // Rating filter
+      if (filterState.minRating > 0 && product.rating < filterState.minRating) {
+        return false;
+      }
+
+      // Prime filter
+      if (filterState.isPrimeOnly && !product.isPrime) return false;
+
+      // Deal filter
+      if (filterState.isDealOnly && !product.badge && !product.discountPercentage) {
+        return false;
+      }
+
+      return true;
+    }).sort((a, b) => {
+      if (sortOption === "price-low-high") return a.price - b.price;
+      if (sortOption === "price-high-low") return b.price - a.price;
+      if (sortOption === "avg-customer-review") return b.rating - a.rating;
+      if (sortOption === "newest") return b.reviewCount - a.reviewCount;
+      return 0; // featured default
+    });
+  }, [filterState, sortOption]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gray-100 dark:bg-zinc-950 font-sans text-gray-900 dark:text-zinc-100 flex flex-col justify-between">
+      
+      {/* Header & Sub-nav */}
+      <div>
+        <Header />
+        <CategoryNav />
+        <HeroCarousel />
+
+        {/* Main Content Area */}
+        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 lg:flex-row">
+            
+            {/* Sidebar Filters */}
+            <FilterSidebar />
+
+            {/* Main Product Listing */}
+            <div className="flex-1 space-y-4">
+              <SortBar totalResults={filteredProducts.length} />
+              <ProductGrid products={filteredProducts} />
+            </div>
+
+          </div>
+        </main>
+      </div>
+
+      {/* Footer */}
+      <footer className="mt-12 bg-[#131921] text-white">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="w-full bg-[#37475a] py-3 text-center text-xs font-bold transition hover:bg-[#485769]"
+        >
+          Back to top
+        </button>
+
+        <div className="mx-auto max-w-7xl px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-xs text-gray-300">
+          <div>
+            <h4 className="font-bold text-white mb-3">Get to Know Us</h4>
+            <ul className="space-y-2">
+              <li className="hover:underline cursor-pointer">Careers</li>
+              <li className="hover:underline cursor-pointer">Blog</li>
+              <li className="hover:underline cursor-pointer">About Amazon Clone</li>
+              <li className="hover:underline cursor-pointer">Investor Relations</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-white mb-3">Make Money with Us</h4>
+            <ul className="space-y-2">
+              <li className="hover:underline cursor-pointer">Sell products on Amazon</li>
+              <li className="hover:underline cursor-pointer">Sell on Amazon Business</li>
+              <li className="hover:underline cursor-pointer">Become an Affiliate</li>
+              <li className="hover:underline cursor-pointer">Advertise Your Products</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-white mb-3">Amazon Payment Products</h4>
+            <ul className="space-y-2">
+              <li className="hover:underline cursor-pointer">Amazon Business Card</li>
+              <li className="hover:underline cursor-pointer">Shop with Points</li>
+              <li className="hover:underline cursor-pointer">Reload Your Balance</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-white mb-3">Let Us Help You</h4>
+            <ul className="space-y-2">
+              <li className="hover:underline cursor-pointer">Your Account</li>
+              <li className="hover:underline cursor-pointer">Your Orders</li>
+              <li className="hover:underline cursor-pointer">Shipping Rates & Policies</li>
+              <li className="hover:underline cursor-pointer">Returns & Replacements</li>
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="border-t border-gray-800 bg-[#0f1111] py-6 text-center text-[11px] text-gray-400">
+          <p>© 2026 Amazon E-Commerce Assessment Clone | Developed with Next.js 16 & React 19</p>
         </div>
-      </main>
+      </footer>
+
+      {/* Global Drawers & Modals */}
+      <ProductDetailModal />
+      <CartDrawer />
+      <ToastContainer />
+
     </div>
   );
 }
