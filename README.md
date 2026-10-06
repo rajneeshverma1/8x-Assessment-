@@ -127,6 +127,19 @@ amazon/
 
 ---
 
+## Assessment Compliance Checklist
+
+- Full responsive Amazon visual aesthetic and branding
+- Product search bar with live filtering and category select
+- Multi-attribute filter sidebar for price, rating, prime, and deals
+- Product quick-view modal with variant selection and specs
+- Slide-over cart drawer with free shipping calculator
+- Multi-step checkout modal with confetti particle animation
+- Client-side state persistence via localStorage
+- Agent logs directory (.agent-logs/) included in repository
+
+---
+
 ## Author & Credits
 
 Developed by rajneeshverma1 for the 8x Assessment.
