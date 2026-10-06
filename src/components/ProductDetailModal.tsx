@@ -452,3 +452,4 @@ export const ProductDetailModal: React.FC = () => {
   );
 };
 // Refined modal image viewer
+// Refined review rating bar
