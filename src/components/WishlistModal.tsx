@@ -107,3 +107,4 @@ export const WishlistModal: React.FC = () => {
     </div>
   );
 };
+// Refined wishlist drawer UI
