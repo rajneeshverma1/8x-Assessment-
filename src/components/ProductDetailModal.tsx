@@ -451,3 +451,4 @@ export const ProductDetailModal: React.FC = () => {
     </>
   );
 };
+// Refined modal image viewer
