@@ -109,6 +109,15 @@ amazon/
    npm run dev
    ```
 
+### Available Scripts Reference
+
+| Command | Action |
+| :--- | :--- |
+| npm run dev | Starts Next.js development server with Turbopack fast refresh |
+| npm run build | Compiles optimized Next.js production build and checks TypeScript types |
+| npm run start | Runs production server for built application |
+| npm run lint | Runs ESLint check across all codebase files |
+
 ---
 
 ## Live Production Deployment
