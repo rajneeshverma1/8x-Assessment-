@@ -91,18 +91,50 @@ amazon/
 └── tsconfig.json                 # TypeScript strict mode settings
 ```
 
-### 🧠 Data Flow & State Management
+---
 
-```mermaid
-graph TD
-    A[CartProvider Context] --> B[Cart State]
-    A --> C[Wishlist State]
-    A --> D[Filter & Search State]
-    A --> E[Toast Notifications]
-    
-    B -->|Persists| LocalStorage[Browser LocalStorage]
-    C -->|Persists| LocalStorage
-    
-    D -->|Filters| MockProducts[MOCK_PRODUCTS Catalog]
-    MockProducts -->|Renders| ProductGrid[Product Grid Component]
-```
+## 🚀 Getting Started & Installation
+
+### Prerequisites
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+
+### Step-by-Step Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rajneeshverma1/8x-Assessment-.git
+   cd 8x-Assessment-
+   ```
+
+2. **Install project dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Launch the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open your browser and navigate to [http://localhost:3000](http://localhost:3000) or [http://localhost:3005](http://localhost:3005).
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Start production build locally:**
+   ```bash
+   npm run start
+   ```
+
+---
+
+## 📜 Available Scripts Reference
+
+| Command | Action |
+| :--- | :--- |
+| `npm run dev` | Starts Next.js development server with Turbopack fast refresh |
+| `npm run build` | Compiles optimized Next.js production build and checks TypeScript types |
+| `npm run start` | Runs production server for built application |
+| `npm run lint` | Runs ESLint check across all codebase files |
