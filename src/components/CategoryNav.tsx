@@ -237,3 +237,4 @@ export const CategoryNav: React.FC = () => {
     </>
   );
 };
+// Updated category drawer accessibility
