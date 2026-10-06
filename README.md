@@ -138,3 +138,38 @@ amazon/
 | `npm run build` | Compiles optimized Next.js production build and checks TypeScript types |
 | `npm run start` | Runs production server for built application |
 | `npm run lint` | Runs ESLint check across all codebase files |
+
+---
+
+## 🌐 Production Deployment Guide
+
+### Deploying to Vercel
+1. Import repository `https://github.com/rajneeshverma1/8x-Assessment-.git` into [Vercel](https://vercel.com).
+2. Framework Preset: **Next.js**.
+3. Click **Deploy**. Vercel will automatically build and publish the live production URL.
+
+### Deploying to Netlify
+1. Connect GitHub account on [Netlify](https://netlify.com).
+2. Build command: `npm run build`
+3. Publish directory: `.next`
+
+---
+
+## 📋 8x Assessment Checklist Compliance
+
+- [x] Full responsive Amazon visual aesthetic & branding
+- [x] Product search bar with live filtering & category select
+- [x] Multi-attribute filter sidebar (Price, Rating, Prime, Deals)
+- [x] Product quick-view modal with variant selection & specs
+- [x] Slide-over cart drawer with free shipping calculator
+- [x] Multi-step checkout modal with confetti particle animation
+- [x] Client-side state persistence via `localStorage`
+- [x] Zero TypeScript / Lint warnings on production build
+
+---
+
+## 👤 Author & Credits
+
+Developed by **[rajneeshverma1](https://github.com/rajneeshverma1)** for the **8x Assessment**.
+
+Licensed under the [MIT License](LICENSE).
