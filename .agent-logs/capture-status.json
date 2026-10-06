@@ -1,0 +1,12 @@
+{
+  "status": "PASSING",
+  "setup_timestamp": "2026-09-15T00:27:00Z",
+  "agent_id": "7285eb9a-a89f-45a6-b12d-26d86b4a7035",
+  "capture_version": "8x-agent-capture-v2",
+  "verification": {
+    "prompts_captured": true,
+    "responses_captured": true,
+    "tools_instrumented": true,
+    "git_tracking_active": true
+  }
+}
