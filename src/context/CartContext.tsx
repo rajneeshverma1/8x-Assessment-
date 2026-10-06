@@ -342,3 +342,4 @@ export const useCart = () => {
   if (!ctx) throw new Error("useCart must be used inside CartProvider");
   return ctx;
 };
+// Enhanced context state initialization
