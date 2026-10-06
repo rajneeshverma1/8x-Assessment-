@@ -1,5 +1,16 @@
 export type ProductBadge = "Deal of the Day" | "Best Seller" | "Amazon's Choice" | "Limited Time Deal";
 
+export interface Review {
+  id: string;
+  author: string;
+  avatar?: string;
+  rating: number;
+  title: string;
+  date: string;
+  content: string;
+  verifiedPurchase: boolean;
+}
+
 export interface Product {
   id: string;
   title: string;
@@ -22,6 +33,7 @@ export interface Product {
   inStock: boolean;
   stockCount: number;
   estimatedDelivery: string;
+  reviews?: Review[];
 }
 
 export interface CartItem {
@@ -55,4 +67,13 @@ export interface FilterState {
   minRating: number;
   isPrimeOnly: boolean;
   isDealOnly: boolean;
+}
+
+export interface User {
+  name: string;
+  email: string;
+  address: string;
+  zipCode: string;
+  city: string;
+  state: string;
 }
