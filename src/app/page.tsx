@@ -168,3 +168,4 @@ export default function Home() {
   );
 }
 // Refined 8x Home Assignment footer alignment
+// Formatted footer copyright notes
